@@ -9,9 +9,9 @@
       <?php
 
       // DIE AND DUMP
-      function dd($you_suck_bro) {
+      function dd($data) {
         echo '<pre>';
-        var_dump($you_suck_bro);
+        var_dump($data);
         echo '</pre>';
         // die();
       }
