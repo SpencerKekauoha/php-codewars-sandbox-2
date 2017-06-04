@@ -182,12 +182,23 @@
       /////  INSTRUCTIONS //////    ********SOLVED********
       /////////////////////////
 
+      // Write a function that takes an (unsigned) integer as input, and returns the number of bits that are equal to one in the binary representation of that number.
 
+      // Example
+
+      // Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case
 
       /////////////////////////
       /////    ANSWER    //////
       /////////////////////////
 
+      // function countBits($n) {
+      //   if ($n == 0) {
+      //     return 0;
+      //   }
+      //   $bits = array_count_values(str_split(decbin($n)));
+      //   return $bits[1];
+      // }
 
       //******************** REFACTORED
 
@@ -197,7 +208,11 @@
       // ************ FUNCTION CALL & TESTING ************
       // ********                         ****************
 
-
+      // countBits(0); // 0
+      // countBits(4); // 1
+      // countBits(7); // 3
+      // countBits(9); // 2
+      // countBits(10); // 2
 
 
 
@@ -213,7 +228,60 @@
       /////  INSTRUCTIONS //////    ********SOLVED********
       /////////////////////////
 
+      // Example
 
+      /////////////////////////
+      /////    ANSWER    //////
+      /////////////////////////
+
+      // function comp($a1, $a2) {
+      //   $root_arr = [];
+      //   foreach($a2 as $root) {
+      //     array_push($root_arr, sqrt($root));
+      //   }
+      //   return array_diff($root_arr, $a1) == [] ? true : false;
+      // }
+
+      //******************** REFACTORED
+
+      // function comp($a1, $a2) {
+      //
+      //   if ( is_null($a1) || is_null($a2) )
+      //     return false;
+      //
+      //   $t = array_map(function($v) {
+      //     return $v * $v;
+      //   }, $a1);
+      //
+      //   sort($a2);
+      //   sort($t);
+      //   return $a2 == $t;
+      // }
+
+      // ****************                         ********
+      // ************ FUNCTION CALL & TESTING ************
+      // ********                         ****************
+
+      // $a1 = [121, 144, 19, 161, 19, 144, 19, 11];
+      // $a2 = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19];
+      // comp($a1, $a2); // true
+      // $a1 = [121, 144, 19, 161, 19, 144, 19, 11];
+      // $a2 = [11*21, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19];
+      // comp($a1, $a2); // false
+
+
+
+
+
+
+
+
+
+      //////////////////////////
+      /////  INSTRUCTIONS //////    ********SOLVED********
+      /////////////////////////
+
+      // Example
 
       /////////////////////////
       /////    ANSWER    //////
